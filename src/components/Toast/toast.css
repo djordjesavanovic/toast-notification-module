@@ -1,0 +1,145 @@
+/* Import Montserrat font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* Container for the toast notifications */
+.toast-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    /* Center the toast horizontally */
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 300px; /* Limit the max width */
+    display: flex;
+    flex-direction: column-reverse; /* Latest toast at the bottom */
+    align-items: center;
+}
+
+/* Individual toast styling */
+.toast {
+    margin-bottom: 8px;
+    /* Cross-browser transition effects */
+    -webkit-transition: 0.5s ease, opacity 0.5s ease;
+    -moz-transition: 0.5s ease, opacity 0.5s ease;
+    -o-transition: 0.5s ease, opacity 0.5s ease;
+    transition: 0.5s ease, opacity 0.5s ease;
+    display: flex;
+    width: 100%; /* Set width to 100% */
+    padding: 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+
+/* Content section styling */
+.toast-content {
+    flex: 1;
+    justify-content: flex-start;
+    padding-left: 12px;
+    padding-right: 12px;
+    max-width: 200px;
+    -webkit-transition: 0.5s ease, opacity 0.5s ease;
+    -moz-transition: 0.5s ease, opacity 0.5s ease;
+    -o-transition: 0.5s ease, opacity 0.5s ease;
+    transition: 0.5s ease, opacity 0.5s ease;
+}
+
+/* Icon container styling */
+.toast-icon-container {
+    padding: 6px 0 1px 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align at the top */
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Close button styling */
+.toast-close-icon-container {
+    display: flex;
+    align-items: flex-start; /* Align at the top */
+}
+
+.toast-close-icon {
+    cursor: pointer;
+}
+
+/* Success, warning, and danger toast colors and shadows */
+.toast-success {
+    background-color: #6FCF97;
+    box-shadow: 0 2px 26px 0 rgba(82, 215, 0, 0.10);
+}
+
+.toast-warning {
+    background-color: #F2C94C;
+    box-shadow: 0 2px 26px 0 rgba(215, 0, 0, 0.10);
+}
+
+.toast-danger {
+    background-color: #EB5757;
+    box-shadow: 0 2px 26px 0 rgba(215, 0, 0, 0.10);
+}
+
+/* Title and message styling */
+.toast-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0 0 4px;
+    line-height: 20px;
+    max-width: 444px;
+}
+
+.toast-message {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+    line-height: 20px;
+    max-width: 444px;
+}
+
+/* Color styling for success, warning, and danger toasts */
+.toast-title-success {
+    color: #0F552C;
+}
+
+.toast-message-success {
+    color: #135E32;
+}
+
+.toast-title-warning {
+    color: #6E5404;
+}
+
+.toast-message-warning {
+    color: #866912;
+}
+
+.toast-title-danger {
+    color: #FFFFFF;
+}
+
+.toast-message-danger {
+    color: #FFE8E8;
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .toast {
+        width: 550px;
+        margin-bottom: 24px;
+    }
+
+    /* Set a fixed width for larger screens */
+    /* Content section styling */
+    .toast-content {
+        max-width: 444px;
+    }
+}
