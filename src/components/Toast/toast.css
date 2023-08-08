@@ -31,15 +31,18 @@
     flex-direction: row;
     justify-content: space-between;
     border-radius: 6px;
+    overflow: hidden; /* Hide overflow */
 }
 
 /* Content section styling */
 .toast-content {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to grow */
+    overflow: hidden; /* Hide overflow */
     justify-content: flex-start;
     padding-left: 12px;
     padding-right: 12px;
-    max-width: 200px;
     -webkit-transition: 0.5s ease, opacity 0.5s ease;
     -moz-transition: 0.5s ease, opacity 0.5s ease;
     -o-transition: 0.5s ease, opacity 0.5s ease;
@@ -58,7 +61,8 @@
 /* Close button styling */
 .toast-close-icon-container {
     display: flex;
-    align-items: flex-start; /* Align at the top */
+    align-items: flex-start;
+    flex-shrink: 0;
 }
 
 .toast-close-icon {
@@ -92,7 +96,6 @@
     text-overflow: ellipsis;
     margin: 0 0 4px;
     line-height: 20px;
-    max-width: 444px;
 }
 
 .toast-message {
@@ -102,7 +105,6 @@
     font-weight: 400;
     margin: 0;
     line-height: 20px;
-    max-width: 444px;
 }
 
 /* Color styling for success, warning, and danger toasts */
@@ -135,11 +137,5 @@
     .toast {
         width: 550px;
         margin-bottom: 24px;
-    }
-
-    /* Set a fixed width for larger screens */
-    /* Content section styling */
-    .toast-content {
-        max-width: 444px;
     }
 }
